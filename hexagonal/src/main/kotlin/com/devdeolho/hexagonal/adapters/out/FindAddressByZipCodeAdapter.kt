@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component
 class FindAddressByZipCodeAdapter(
     private val findAddressByZipCodeClient: FindAddressByZipCodeClient
 ): FindAddressByZipCodeOutputPort {
+
     override fun find(zipCode: String): Address =
         findAddressByZipCodeClient.find(zipCode).toAddress()
-    }
+
 }
