@@ -3,6 +3,7 @@ package com.devdeolho.hexagonal.adapters.`in`.controller
 import com.devdeolho.hexagonal.adapters.`in`.controller.request.CustomerRequest
 import com.devdeolho.hexagonal.adapters.`in`.controller.response.CustomerResponse
 import com.devdeolho.hexagonal.application.core.domain.Customer
+import com.devdeolho.hexagonal.application.ports.`in`.DeleteCustomerByIdInputPort
 import com.devdeolho.hexagonal.application.ports.`in`.FindCustomerByIdInputPort
 import com.devdeolho.hexagonal.application.ports.`in`.InsertCustomerInputPort
 import com.devdeolho.hexagonal.application.ports.`in`.UpdateCustomerInputPort
@@ -15,7 +16,8 @@ import org.springframework.web.bind.annotation.*
 class CustomerController(
         private val insertCustomerInputPort: InsertCustomerInputPort,
         private val findCustomerByIdInputPort: FindCustomerByIdInputPort,
-        private val updateCustomerInputPort: UpdateCustomerInputPort
+        private val updateCustomerInputPort: UpdateCustomerInputPort,
+        private val deleteCustomerByIdInputPort: DeleteCustomerByIdInputPort
 ) {
 
     @PostMapping
@@ -41,5 +43,11 @@ class CustomerController(
             val customer = Customer(id, name, cpf = cpf)
             updateCustomerInputPort.update(customer, customerRequest.zipCode)
         }
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    fun delete(@PathVariable id: String) {
+        deleteCustomerByIdInputPort.delete(id)
     }
 }
