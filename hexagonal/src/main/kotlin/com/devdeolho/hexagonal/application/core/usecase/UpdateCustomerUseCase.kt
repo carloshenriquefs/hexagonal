@@ -18,7 +18,6 @@ class UpdateCustomerUseCase(
         if (customer.id == null) throw IllegalArgumentException("The id field cannot be null")
         val savedCpf = findCustomerByIdInputPort.find(customer.id).cpf
 
-
         customer.apply {
             address = findAddressByZipCodeOutputPort.find(zipCode)
         }.let {
