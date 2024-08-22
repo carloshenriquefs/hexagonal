@@ -31,7 +31,7 @@
 ```
 
 
-## 📋 - Diagrama:
+## 📋 - Diagrama Funcional:
 ![hexagonal](https://github.com/user-attachments/assets/fca7c5ef-e79e-4590-a60a-a5040fab8153)
 
 ##
@@ -42,6 +42,7 @@
 - MongoDB;
 - Docker;
 - JUnit;
+- Kafka;
 - Kafdrop;
 - Spring Boot;
 - Gradle;
