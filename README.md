@@ -12,7 +12,10 @@
 │   ├── adapters
 │   |  ├── in
 |   |  |  ├── consumer
+|   |  |  |  ├── message
 |   |  |  ├── controller
+|   |  |  |  ├── request
+|   |  |  |  ├── response
 |   |  ├── out
 |   |  |  ├── client
 |   |  |  |  ├── response
@@ -24,15 +27,28 @@
 |   |  |  ├── exceptions
 |   |  |  ├── usecase
 │   |  ├── ports
-│   |  ├── in
-|   |  ├── out
+│   |  |  ├── in
+|   |  |  ├── out
 │   ├── config
-├── tests
+├── test
+│   ├── hexagonal.architecture
 ```
 
 
 ## 📋 - Diagrama Funcional:
 ![hexagonal](https://github.com/user-attachments/assets/fca7c5ef-e79e-4590-a60a-a5040fab8153)
+
+##
+
+## ✏️ - Funcionalidades: 
+
+- CRUD - CREATE;
+- CRUD - READ;
+- CRUD - UPDATE;
+- CRUD - DELETE;
+
+- Criação do producer Kafka;
+- Criação do consumer Kafka;
 
 ##
 
