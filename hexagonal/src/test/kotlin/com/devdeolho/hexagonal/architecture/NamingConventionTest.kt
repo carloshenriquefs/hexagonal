@@ -24,7 +24,7 @@ class NamingConventionTest {
             .`as`("Message classes should reside inside message package in consumer package")
 
     @ArchTest
-    val `controller` = classes()
+    val `controller reside only message package` = classes()
             .that()
             .haveNameMatching(".*Controller")
             .should()
@@ -110,4 +110,95 @@ class NamingConventionTest {
             .should()
             .resideInAPackage("..hexagonal.config")
             .`as`("Config classes should reside inside config package in hexagonal package")
+
+    @ArchTest
+    val `should be sufixed consumer` = classes()
+            .that()
+            .resideInAPackage("..consumer")
+            .should()
+            .haveSimpleNameEndingWith("Consumer")
+
+    @ArchTest
+    val `should be suffixed message` = classes()
+            .that()
+            .resideInAPackage("..message")
+            .should()
+            .haveSimpleNameEndingWith("Message")
+
+    @ArchTest
+    val `should be suffixed controller` = classes()
+            .that()
+            .resideInAPackage("..controller")
+            .should()
+            .haveSimpleNameEndingWith("Controller")
+
+    @ArchTest
+    val `should be suffized request` = classes()
+            .that()
+            .resideInAPackage("..request")
+            .should()
+            .haveSimpleNameEndingWith("Request")
+
+    @ArchTest
+    val `should be suffixed response` = classes()
+            .that()
+            .resideInAPackage("..response")
+            .should()
+            .haveSimpleNameEndingWith("Response")
+
+    @ArchTest
+    val `should be suffixed client` = classes()
+            .that()
+            .resideInAPackage("..client")
+            .should()
+            .haveSimpleNameEndingWith("Client")
+
+    @ArchTest
+    val `should be suffixed repository` = classes()
+            .that()
+            .resideInAPackage("..repository")
+            .should()
+            .haveSimpleNameEndingWith("Repository")
+
+    @ArchTest
+    val `should be suffixed entity` = classes()
+            .that()
+            .resideInAPackage("..entity")
+            .should()
+            .haveSimpleNameEndingWith("Entity")
+
+    @ArchTest
+    val `should be suffixed adapter` = classes()
+            .that()
+            .resideInAPackage("..adapters.out")
+            .should()
+            .haveSimpleNameEndingWith("Adapter")
+
+    @ArchTest
+    val `should be suffixed usecase` = classes()
+            .that()
+            .resideInAPackage("..usecase")
+            .should()
+            .haveSimpleNameEndingWith("UseCase")
+
+    @ArchTest
+    val `should be suffixed input port` = classes()
+            .that()
+            .resideInAPackage("..ports.in")
+            .should()
+            .haveSimpleNameEndingWith("InputPort")
+
+    @ArchTest
+    val `should be suffixed output port` = classes()
+            .that()
+            .resideInAPackage("..ports.out")
+            .should()
+            .haveSimpleNameEndingWith("OutputPort")
+
+    @ArchTest
+    val `should be suffixed config` = classes()
+            .that()
+            .resideInAPackage("..config")
+            .should()
+            .haveSimpleNameEndingWith("Config")
 }
