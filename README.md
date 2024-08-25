@@ -31,7 +31,8 @@
 |   |  |  ├── out
 │   ├── config
 ├── test
-│   ├── hexagonal.architecture
+│   ├── hexagonal
+|   |  ├── architecture
 ```
 
 
@@ -42,10 +43,39 @@
 
 ## ✏️ - Funcionalidades: 
 
-- CRUD - CREATE;
-- CRUD - READ;
-- CRUD - UPDATE;
-- CRUD - DELETE;
+- Endpoint - CREATE;
+```http request
+POST /api/v1/customers
+Content-Type: application/json
+{
+  "name" : "Ronaldo",
+  "cpf" : "59847812014",
+  "zipCode" : "38400000"
+}
+```
+
+- Endpoint - READ BY ID;
+```http request
+GET /api/v1/customers/{id}
+Content-Type: application/json
+```
+
+- Endpoint - UPDATE;
+```http request
+PUT /api/v1/customers/{id}
+Content-Type: application/json
+{
+  "name" : "Ronaldo",
+  "cpf" : "59847812014",
+  "zipCode" : "38400000"
+}
+```
+
+- Endpoint - DELETE;
+```http request
+DELETE /api/v1/customers/{id}
+Content-Type: application/json
+```
 
 - Criação do producer Kafka;
 - Criação do consumer Kafka;
